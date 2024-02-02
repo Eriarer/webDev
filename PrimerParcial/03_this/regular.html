@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favIcon -->
+    <link rel="icon" type="image/x-icon" href="#" />
+    <title>Regular This</title>
+  </head>
+
+  <body>
+    <h1>JavaScript "this" (regular)</h1>
+    <p>Este ejemplo demuestra que en una función regular, la palabra clave "this" representa diferentes objetos
+      dependiendo de cómo se llamó la función.</p>
+    <p>Haz clic en el botón para ejecutar la función "hello" nuevamente, y verás que esta vez "this" representa el
+      objeto del botón.</p>
+    <button id="btn">¡Haz clic!</button>
+    <p id="demo"></p>
+    <script>
+      // Declaración de la variable "hello"
+      let hello = "";
+      // Definición de la función "hello"
+      hello = function () {
+        // Agrega la representación de "this" al elemento con id "demo"
+        document.getElementById("demo").innerHTML += this;
+      }
+      // El objeto window llama a la función cuando la ventana se carga:
+      window.addEventListener("load", hello);
+      // Un objeto de botón llama a la función cuando se hace clic en el botón:
+      document.getElementById("btn").addEventListener("click", hello);
+    </script>
+  </body>
+
+</html>
