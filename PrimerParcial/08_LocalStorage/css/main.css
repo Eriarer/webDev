@@ -1,0 +1,11 @@
+#listado {
+  width: 800px;
+}
+
+#listado,
+tr,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
