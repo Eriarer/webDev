@@ -1,8 +1,6 @@
-let libros = Json.parse(localStorage.getItem("libros"));
-let lastId = 0;
-
+let libros = JSON.parse(localStorage.getItem("libros"));
+let indice = -1;
 if (libros == null) libros = [];
-else lastId = seekLastId();
 
 function lista() {
   let aLength = libros.length;
@@ -13,14 +11,15 @@ function lista() {
   let tabla = "<tr><th>Titulo</th><th>Autor</th><th>Editorial</th><th>Anio</th><th>Borrar</th><th>Editar</th></tr>";
 
   for (let i in libros) {
+    console.log(i);
     let libro = JSON.parse(libros[i]);
 
     tabla += "<tr><td>" + libro.titulo + "</td>";
     tabla += "<td>" + libro.autor + "</td>";
     tabla += "<td>" + libro.editorial + "</td>";
     tabla += "<td>" + libro.anio + "</td>";
-    tabla += "<td><button onclick='borrar(" + libro.id + ")'>Borrar</button></td>";
-    tabla += "<td><button onclick='editar(" + libro.id + ")'>Editar</button></td>";
+    tabla += "<td><button onclick='borrar(" + i + ")'>Borrar</button></td>";
+    tabla += "<td><button onclick='editar(" + i + ")'>Editar</button></td>";
     tabla += "</tr>";
   }
 
@@ -28,23 +27,18 @@ function lista() {
   document.getElementById("total").innerHTML = "Total de libros: " + aLength;
 }
 
-function seekLastId() {
-  for (let i in libros) {
-    let libro = JSON.parse(libros[i]);
-    if (libro.id > lastId) {
-      lastId = libro.id;
-    }
-  }
-  return lastId;
-
-}
-
 function alta() {
   let titulo = document.getElementById("titulo").value;
   let autor = document.getElementById("autor").value;
   let editorial = document.getElementById("editorial").value;
   let anio = document.getElementById("anio").value;
-  lastId++;
+
+  let salir = 1 * titulo.length * autor.length * editorial.length * anio.length;
+
+  if (salir == 0) {
+    alert("Faltan datos por capturar");
+    return;
+  }
 
   let libro = JSON.stringify(
     {
@@ -52,14 +46,18 @@ function alta() {
       autor: autor,
       editorial: editorial,
       anio: anio,
-      id: lastId + 1
     });
+  if (indice == -1) {
+    libros.push(libro);
 
-  libros.push(libro);
-
-  localStorage.setItem("libros", JSON.stringify(libros));
-  alert("libro anadido exitosamente");
-
+    localStorage.setItem("libros", JSON.stringify(libros));
+    alert("libro anadido exitosamente");
+  } else {
+    libros[indice] = libro;
+    localStorage.setItem("libros", JSON.stringify(libros));
+    alert("libro editado exitosamente");
+    document.getElementById("altaBtn").innerHTML = "Guardar"
+  }
   lista();
 
   //borramos lo que previamente se habia capturado
@@ -67,40 +65,41 @@ function alta() {
   document.getElementById("autor").value = "";
   document.getElementById("editorial").value = "";
   document.getElementById("anio").value = "";
+  indice = -1;
 }
 
 function borrar(id) {
-  for (let i in libros) {
-    let libro = JSON.parse(libros[i]);
-    if (libro.id == id) {
-      libros.splice(i, 1);
-    }
+  let libro = JSON.parse(libros[id]);
+  let titulo = libro.titulo;
+  if (confirm("Desea borrar el libro " + titulo)) {
+    libros.splice(id, 1);
+    localStorage.setItem("libros", JSON.stringify(libros));
+    alert("libro borrado exitosamente");
   }
-
-  localStorage.setItem("libros", JSON.stringify(libros));
   lista();
+}
+
+cancelar = () => {
+  document.getElementById("titulo").value = "";
+  document.getElementById("autor").value = "";
+  document.getElementById("editorial").value = "";
+  document.getElementById("anio").value = "";
+  document.getElementById("altaBtn").innerHTML = "Guardar"
+  let buttonsTD = document.getElementById("buttonsTD");
+  buttonsTD.innerHTML = '<button id="altaBtn" onclick="alta()" />Guardar</button>';
+  indice = -1;
 }
 
 function editar(id) {
-  for (let i in libros) {
-    let libro = JSON.parse(libros[i]);
-    if (libro.id == id) {
-      document.getElementById("titulo").value = libro.titulo;
-      document.getElementById("autor").value = libro.autor;
-      document.getElementById("editorial").value = libro.editorial;
-      document.getElementById("anio").value = libro.anio;
-
-      libros.splice(i, 1);
-    }
-  }
-
-  localStorage.setItem("libros", JSON.stringify(libros));
-  lista();
+  let libro = JSON.parse(libros[id]);
+  document.getElementById("titulo").value = libro.titulo;
+  document.getElementById("autor").value = libro.autor;
+  document.getElementById("editorial").value = libro.editorial;
+  document.getElementById("anio").value = libro.anio;
+  document.getElementById("altaBtn").innerHTML = "Editar"
+  let buttonsTD = document.getElementById("buttonsTD");
+  buttonsTD.innerHTML += "<button onclick='cancelar()'>Cancelar</button>"
+  indice = id;
 }
-
-//Este codigo comentado es equivalente  a window.onload=lista;
-/*window.onload = function(){
-    lista();
-}*/
 
 window.onload = lista;
