@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almacenar contraseñas</title>
+    <!-- favIcon -->
+    <link rel="icon" type="image/x-icon" href="#" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>Manejo contraseñas LocalStorage</h1>
+    </header>
+    <form action="#">
+      <div class="inputGroup">
+        <label for="nombre"> Nombre: </label>
+        <input type="text" id="nombre" />
+      </div>
+      <div class="inputGroup">
+        <label for="nombre"> Password: </label>
+        <input type="text" id="password" />
+      </div>
+      <div class="inputGroup">
+        <button onclick="guardarDatos()">Guardar Datos</button>
+      </div>
+    </form>
+    <footer>
+      <form action="#">
+        <div class="inputGroup">
+          <button onclick="recuperarDatos()">Recuperar datos</button>
+        </div>
+        <p id="datos"> Pulsa para ver tu nombre y tu password. </p>
+      </form>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+
+</html>
