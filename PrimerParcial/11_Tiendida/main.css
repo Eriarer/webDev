@@ -1,3 +1,12 @@
+header {
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 1em;
+}
+
 #gridContainer {
   display: flex;
   margin-bottom: 25px;
@@ -5,12 +14,78 @@
 
 #sidebar {
   grid-area: sidebar;
-  max-width: 300px;
+  max-width: 400px;
+  min-width: 250px;
   width: 20%;
+  padding: 1.5em;
+}
+
+#tableContainer {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+#tablaCarrito {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+#total {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .container {
   grid-area: container;
+}
+
+#productoEliminado {
+  width: min-content;
+  animation: in-out 1.5s;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 50% !important;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 2px 0 0 #000000;
+  background-color: rgb(209, 223, 234);
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #ebfffe;
+    box-shadow: 1px 3px 0 0 #000000;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    box-shadow: 0px 0px 0 0 #000000;
+    transform: translate(1px, 1px);
+  }
+}
+
+@keyframes in-out {
+  0% {
+    transform: translateX(-200%);
+  }
+
+  10% {
+    transform: scale(1) translateX(0);
+  }
+
+  80% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: translateX(-200%);
+  }
 }
 
 /* Estilos para pantallas más estrechas */
@@ -25,5 +100,35 @@
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+
+  #tableContainer {
+    max-height: 300px;
+    width: 50%;
+  }
+
+  #total {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @keyframes in-out {
+    0% {
+      transform: translateX(200%);
+    }
+
+    15% {
+      transform: scale(1) translateX(0);
+    }
+
+    75% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: translateX(200%);
+    }
   }
 }
