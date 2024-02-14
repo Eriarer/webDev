@@ -1,0 +1,29 @@
+#gridContainer {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+#sidebar {
+  grid-area: sidebar;
+  max-width: 300px;
+  width: 20%;
+}
+
+.container {
+  grid-area: container;
+}
+
+/* Estilos para pantallas más estrechas */
+@media only screen and (max-width: 768px) {
+  #gridContainer {
+    display: grid;
+    grid-template-areas: "container" "sidebar";
+  }
+
+  #sidebar {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
