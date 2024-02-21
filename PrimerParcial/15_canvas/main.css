@@ -4,6 +4,7 @@
   height: 500px;
   margin: 10px;
   border: 1px solid #999999;
+  background-image: url('tiledCanvas.png');
 }
 
 #cajaimagenes {
