@@ -1,0 +1,14 @@
+#messages {
+  height: 80svh;
+  overflow: auto;
+  border-radius: 25px;
+  padding: 10px;
+  border: 2px solid #e2e2e2;
+  background-color: #f3fcfd;
+}
+
+#input {
+  border-radius: 25px;
+  border: 2px solid #e2e2e2;
+  background-color: #f3fcfd;
+}
