@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Práctica II Files</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <style>
-    table {
-      border: solid black 1px;
-    }
-    table > th, td {
-      border: solid black 1px;
-      padding: 20px;
-    }
-      #salida{
-          color:red;
-      }
-  </style>
+  <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
- <br><br>
-  <div class="row">
-    <div class="col-2"></div>
-    <div class="col-8">
-     <h1>Introduce un archivo de imagen</h1>
-      <form action="">
-        <input type="file" name="archivos" id="archivos">
-      </form>
-      <p>Nombre: <span id="nombre"></span></p>
-      <p>Tamaño: <span id="tamano"></span></p>
-      <p>Tipo: <span id="tipo"></span></p>
-      <div id="salida"></div>
+  <nav class="navbar navbar-light mb-3">
+    <h1> Abraham Melgoza de la Torre </h1>
+  </nav>
+  <div class="container">
+    <div class="row row-cols-1">
+      <div class="col">
+        <h1>Introduce un archivo de imagen</h1>
+        <div class="input-group  mb-3">
+          <div class="custom-file">
+            <input id="archivos" type="file" class="custom-file-input">
+            <label class="custom-file-label" for="archivo" id="archivoSelected">Choose file</label>
+          </div>
+        </div>
+      </div>
+      <div class="col" id="data-container" hidden>
+        <p>Nombre: <span id="nombre"></span></p>
+        <p>Tamaño: <span id="tamano"></span></p>
+        <p>Tipo: <span id="tipo"></span></p>
+      </div>
+      <div class="col" id="salida">
+      </div>
     </div>
-    <div class="col-2"></div>
   </div>
 </body>
-<script
-  src="https://code.jquery.com/jquery-3.4.1.slim.js"
-  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-  crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" type="application/javascript"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" type="application/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.js"
+  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  type="application/javascript"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+  type="application/javascript"></script>
 <script src="script.js" type="application/javascript"></script>
+
 </html>

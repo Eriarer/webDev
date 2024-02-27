@@ -1,8 +1,64 @@
+.navbar {
+  background-color: #a5c5e4;
+  border-bottom: 1px solid #e5e5e5;
+
+  &>h1 {
+    margin: 0;
+  }
+}
+
+#itemContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
 #soltar {
-  width: 200px;
-  height: 200px;
-  background: grey;
-  border: 3px solid black;
+  width: 90svw;
+  height: 30svh;
+  max-width: 600px;
+  max-height: 200px;
+  border-radius: 20px;
+  border: 2px dashed #8f8a8a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &>img {
+    width: 10svmin;
+    height: auto;
+    animation: float infinite 2s ease-in-out;
+    transition: 1s all ease-in-out;
+  }
+}
+
+#soltar:hover {
+  background-color: #f0f0f0;
+  cursor: grab;
+
+  &>img {
+    /* pausar la animacion en el frame en el que esta */
+    animation-play-state: paused;
+    width: 12svmin;
+  }
+}
+
+#filesOutput {
+  font-size: 0.8em;
 }
 
 
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1svh);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -34,4 +34,5 @@ function muestraDatos(archivo) {
   document.getElementById('nombre').innerHTML = archivo.name;
   document.getElementById('tamano').innerHTML = archivo.size + " bytes";
   document.getElementById('tipo').innerHTML = archivo.type;
+  document.getElementById('data-container').removeAttribute('hidden');
 }
