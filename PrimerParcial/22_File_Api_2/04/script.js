@@ -29,7 +29,7 @@ function soltarArchivo(e) {
     total += archivo[i].size;
   }
   files += "</div>";
-  info += "<p>Totla de KB leídos: " + total / 1024 + " en " + archivo.length + "</p>";
+  info += "<p>Totla de KB leídos: " + (total / (1024)).toFixed(3) + "kb en " + archivo.length + " archivos</p>";
   document.getElementById("salida").innerHTML = info;
   document.getElementById("filesOutput").innerHTML = files;
   document.getElementById("dataContainer").removeAttribute("hidden");
