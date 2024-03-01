@@ -11,6 +11,7 @@ ul {
 li {
   display: inline-block;
 }
+
 li a {
   text-decoration: none;
   text-transform: uppercase;
@@ -24,4 +25,6 @@ li a {
 
 body {
   background-color: lightgray;
-}/*# sourceMappingURL=estilos.css.map */
+}
+
+/*# sourceMappingURL=estilos.css.map */
