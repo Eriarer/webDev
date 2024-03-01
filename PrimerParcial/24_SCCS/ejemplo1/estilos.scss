@@ -1,0 +1,25 @@
+$colorgb: #444;
+$colorgral: white;
+$width: 400px;
+
+* {
+  font-family: Lato;
+  padding: 50px;
+}
+
+body {
+  background-color: $colorgb;
+}
+
+h1 {
+  color: $colorgb;
+  background-color: $colorgral;
+  font-size: 2em;
+}
+
+p {
+  color: $colorgral;
+  font-size: 1.5em;
+  width: $width;
+  margin: 0 auto;
+}
