@@ -1,0 +1,51 @@
+@media (min-width: 1400px) {
+  .col-xxl-m5 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+/* Dark UI */
+body {
+  background-color: #1e1e1e;
+  color: #fff;
+  /* Agregarle una sombra a todos los bordes
+  izquierdo, derecho, superior, inferior. 
+  La sombra es hacia el interior de la página*/
+}
+
+#headLine {
+  background-color: #17151e;
+  text-shadow: 0 0 10px #ffc676e2;
+  /* sombra en el borde inferior */
+  box-shadow: 0 0 15px 2px #1f2d6bcf;
+}
+
+#masonry {
+  /* agregarle una sombra a todos los bordes, la sombra es 
+  hacia el interior de la página */
+  box-shadow: inset 0 0 180px -80px #1f2d6bcf;
+
+}
+
+.card {
+  background-color: #21211c;
+  color: #fff;
+  border: none;
+  /* agregarle una sombra neon */
+  box-shadow: 0 0 15px 2px #381f6b;
+  transition: all 0.7s ease;
+
+  &:hover {
+    /* agregarle una sombra más intensa */
+    box-shadow: 0 0 15px 5px #3e1c82;
+  }
+}
+
+.card-body {
+  &>h5 {
+    color: #fff;
+    /* agregarle una sombra neon al texto */
+    text-shadow: 0 0 5px #ffc676a5;
+  }
+}
