@@ -10,7 +10,6 @@
   -->
   <!-- Bulma Local -->
   <link rel="stylesheet" href="../node_modules/bulma/css/bulma.min.css">
-
 </head>
 
 <body>
@@ -76,10 +75,10 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-primary">
+            <a class="button is-black">
               <strong>Sign up</strong>
             </a>
-            <a class="button is-light">
+            <a class="button is-primary">
               Log in
             </a>
           </div>
@@ -182,6 +181,7 @@
         </div>
       </article>
     </div>
+    <!-- Alert -->
     <div class="container p-5">
       <div class="notification is-warning">
         <button class="delete"></button>
@@ -191,6 +191,154 @@
         efficitur.
       </div>
     </div>
+    <!-- Form -->
+    <form class="mb-4">
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Text input">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Username</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+        <p class="help is-success">This username is available</p>
+      </div>
+
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-exclamation-triangle"></i>
+          </span>
+        </div>
+        <p class="help is-danger">This email is invalid</p>
+      </div>
+
+      <div class="field">
+        <label class="label">Subject</label>
+        <div class="control">
+          <div class="select">
+            <select>
+              <option>Select dropdown</option>
+              <option>With options</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Message</label>
+        <div class="control">
+          <textarea class="textarea" placeholder="Textarea"></textarea>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input type="checkbox">
+            I agree to the <a href="#">terms and conditions</a>
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="question">
+            Yes
+          </label>
+          <label class="radio">
+            <input type="radio" name="question">
+            No
+          </label>
+        </div>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-link">Submit</button>
+        </div>
+        <div class="control">
+          <button class="button is-link is-light">Cancel</button>
+        </div>
+      </div>
+    </form>
+    <!-- Modal -->
+    <button class="js-modal-trigger button is-primary mb-4" data-target="modal-js-example">
+      Open JS example modal
+    </button>
+    <div id="modal-js-example " class="modal">
+      <div class="modal-background"></div>
+
+      <div class="modal-content">
+        <div class="box">
+          <p>Modal JS example</p>
+          <!-- Your content -->
+        </div>
+      </div>
+
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <!-- Panel -->
+    <article class="panel is-danger">
+      <p class="panel-heading">
+        Danger
+      </p>
+      <p class="panel-tabs">
+        <a class="is-active">All</a>
+        <a>Public</a>
+        <a>Private</a>
+        <a>Sources</a>
+        <a>Forks</a>
+      </p>
+      <div class="panel-block">
+        <p class="control has-icons-left">
+          <input class="input is-danger" type="text" placeholder="Search">
+          <span class="icon is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+        </p>
+      </div>
+      <a class="panel-block is-active">
+        <span class="panel-icon">
+          <i class="fas fa-book" aria-hidden="true"></i>
+        </span>
+        bulma
+      </a>
+      <a class="panel-block">
+        <span class="panel-icon">
+          <i class="fas fa-book" aria-hidden="true"></i>
+        </span>
+        marksheet
+      </a>
+      <a class="panel-block">
+        <span class="panel-icon">
+          <i class="fas fa-book" aria-hidden="true"></i>
+        </span>
+        minireset.css
+      </a>
+      <a class="panel-block">
+        <span class="panel-icon">
+          <i class="fas fa-book" aria-hidden="true"></i>
+        </span>
+        jgthms.github.io
+      </a>
+    </article>
   </div>
   <!-- Footer -->
   <footer class="footer">
@@ -222,7 +370,48 @@
 
         });
       });
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+      // Functions to open and close a modal
+      function openModal($el) {
+        $el.classList.add('is-active');
+      }
 
+      function closeModal($el) {
+        $el.classList.remove('is-active');
+      }
+
+      function closeAllModals() {
+        (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+          closeModal($modal);
+        });
+      }
+
+      // Add a click event on buttons to open a specific modal
+      (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+        const modal = $trigger.dataset.target;
+        const $target = document.getElementById(modal);
+
+        $trigger.addEventListener('click', () => {
+          openModal($target);
+        });
+      });
+
+      // Add a click event on various child elements to close the parent modal
+      (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+        const $target = $close.closest('.modal');
+
+        $close.addEventListener('click', () => {
+          closeModal($target);
+        });
+      });
+
+      // Add a keyboard event to close all modals
+      document.addEventListener('keydown', (event) => {
+        if (event.key === "Escape") {
+          closeAllModals();
+        }
+      });
     });
   </script>
 </body>
