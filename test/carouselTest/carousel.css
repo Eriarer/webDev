@@ -1,14 +1,22 @@
 :root {
   /* Variable del ancho del slider */
-  --slider-width: 90%;
+  --slider-width: 100%;
   /* Alto del slider */
   --slider-height: 60vh;
   /* Border radius utilizado en los elementos */
   --slider-border-radius: 5%;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5em;
+}
+
 .slider {
   width: var(--slider-width);
+  border-radius: var(--slider-border-radius);
   text-align: center;
   overflow: hidden;
   position: relative;
