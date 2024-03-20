@@ -1,0 +1,39 @@
+<main class="bg-dark">
+  <div class="container-fluid">
+    <div class="text-center">
+      <div class="title">
+        <h1>Angular Bindig</h1>
+        <h3>Abrama Melgoza de la Torre</h3>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="card-group">
+      <div class="card border-primary bg-opacity-75 bg-dark">
+        <img src="{{user1.img}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{user1.nombre}}</h5>
+          <p class="card-text">Nombre y apellido: {{user1.nombre}} {{user1.apellido}}</p>
+          <p class="card-text text-info">Contacto: {{user1.correo}} <small>{{user1.telefono}}</small></p>
+        </div>
+      </div>
+      <div class="card border-primary bg-opacity-75 bg-dark">
+        <img src="{{user2.img}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{user2.nombre}}</h5>
+          <p class="card-text">Nombre y apellido: {{user2.nombre}} {{user2.apellido}}</p>
+          <p class="card-text text-info">Contacto: {{user2.correo}} <small>{{user2.telefono}}</small></p>
+        </div>
+      </div>
+      <div class="card border-primary bg-opacity-75 bg-dark">
+        <img src="{{user3.img}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{user3.nombre}}</h5>
+          <p class="card-text">Nombre y apellido: {{user3.nombre}} {{user3.apellido}}</p>
+          <p class="card-text text-info">Contacto: {{user3.correo}} <small>{{user3.telefono}}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<router-outlet />

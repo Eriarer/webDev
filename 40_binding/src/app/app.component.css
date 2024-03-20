@@ -1,0 +1,14 @@
+main {
+    height: 100svh;
+    width: 100svw;
+}
+
+* {
+    color: whitesmoke;
+}
+
+.container-fluid {
+    background-color: blueviolet;
+    padding: 1em;
+    margin-bottom: 2em;
+}
