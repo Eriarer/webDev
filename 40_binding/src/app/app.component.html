@@ -7,7 +7,7 @@
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container mb-5">
     <div class="card-group">
       <div class="card border-primary bg-opacity-75 bg-dark">
         <img src="{{user1.img}}" class="card-img-top" alt="...">
@@ -18,11 +18,12 @@
         </div>
       </div>
       <div class="card border-primary bg-opacity-75 bg-dark">
-        <img src="{{user2.img}}" class="card-img-top" alt="...">
+        <img [src]="user2.img" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{user2.nombre}}</h5>
-          <p class="card-text">Nombre y apellido: {{user2.nombre}} {{user2.apellido}}</p>
-          <p class="card-text text-info">Contacto: {{user2.correo}} <small>{{user2.telefono}}</small></p>
+          <h5 class="card-title" [innerHTML]="user2.nombre"></h5>
+          <p class="card-text" [innerHTML]="'Nombre y Apellido: ' + user2.nombre + ' ' + user2.apellido"></p>
+          <p class="card-text text-info"
+            [innerHTML]="'Contacto: ' + user2.correo + ' <small>' + user2.telefono + '</small>'"></p>
         </div>
       </div>
       <div class="card border-primary bg-opacity-75 bg-dark">

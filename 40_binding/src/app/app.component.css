@@ -1,6 +1,7 @@
 main {
     height: 100svh;
     width: 100svw;
+    overflow-y: auto;
 }
 
 * {
