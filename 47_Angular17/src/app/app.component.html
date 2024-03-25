@@ -1,0 +1,35 @@
+<!-- Ejemplo de @if -->
+@if (isLoggedIn) {
+<div>
+  <p>Bienvenido {{ username }}</p>
+</div>
+}
+
+<!-- Ejemplo de @for -->
+<ul>
+  @for (item of items; track item) {
+  <li>
+    {{ item }}
+  </li>
+  }
+</ul>
+
+<!-- Ejemplo de @switch -->
+<div>
+  @switch (color) {
+  @case ('red') {
+  <p>El color es rojo</p>
+  }
+  @case ('blue') {
+  <p>El color es azul</p>
+  }
+  @case ('green') {
+  <p>El color es verde</p>
+  }
+  @default {
+  <p>Otro color</p>
+  }
+  }
+</div>
+
+<router-outlet />
