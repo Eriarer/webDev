@@ -1,0 +1,13 @@
+<div class="background"></div>
+<div>
+  <h1>Abraham Melgoza de la Torre</h1>
+  <div class="dices">
+    <app-dado class="dice" [value]="dice1"></app-dado>
+    <app-dado class="dice" [value]="dice2"></app-dado>
+    <app-dado class="dice" [value]="dice3"></app-dado>
+  </div>
+  <button (click)="gamble()" [disabled]="buttonDisabled">Tirar</button>
+  <p class="output {{result}}">{{message}}</p>
+</div>
+
+<router-outlet />

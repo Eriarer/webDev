@@ -1,0 +1,144 @@
+div {
+  text-align: center;
+  color: white;
+}
+
+.background {
+  background-image: url('../assets/bg.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  /* blur a la imagen de backgroudn */
+  filter: blur(2px);
+  /* darle efecto de biñeta */
+  box-shadow: inset 0 0 0 500px rgba(0, 0, 0, 0.762);
+  min-height: 100vh;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 5rem;
+}
+
+.roling {
+  animation: diceThrow 2s infinite;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #45a049;
+  }
+
+  &:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #375439;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px #307532;
+  }
+
+  &:disabled {
+    background-color: #8cbb8c;
+    box-shadow: none;
+    color: #666666;
+    cursor: not-allowed;
+  }
+}
+
+.output {
+  font-size: 2rem;
+  margin-top: 2rem;
+  border-radius: 5px;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.win {
+  background-color: #1c82ad;
+}
+
+.lose {
+  background-color: #5c1616;
+}
+
+@keyframes diceThrow {
+  0% {
+    transform: translateY(0) rotateZ(0deg);
+  }
+
+  1%,
+  5%,
+  9%,
+  13%,
+  17%,
+  21%,
+  25%,
+  29%,
+  31% {
+    transform: rotateZ(-5deg);
+  }
+
+  3%,
+  7%,
+  11%,
+  15%,
+  19%,
+  23%,
+  27%,
+  33% {
+    transform: rotateZ(5deg);
+  }
+
+  34% {
+    transform: translateY(0px) rotateZ(-2deg);
+  }
+
+
+  36% {
+    transform: translateY(5px) rotateZ(10deg);
+  }
+
+  53% {
+    transform: translateY(-40px) rotateZ(-290deg);
+  }
+
+  70% {
+    transform: translateY(-4px) rotateZ(-580deg);
+  }
+
+  84% {
+    transform: translateY(-20px) rotateZ(-288deg);
+  }
+
+  98% {
+    transform: translateY(-2px) rotateZ(-4deg);
+  }
+
+  99% {
+    transform: translateY(-6px) rotateZ(2deg);
+  }
+
+  100% {
+    transform: translateY(0) rotateZ(0deg);
+  }
+}
