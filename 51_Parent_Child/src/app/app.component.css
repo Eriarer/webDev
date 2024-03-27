@@ -12,7 +12,7 @@ div {
   /* blur a la imagen de backgroudn */
   filter: blur(2px);
   /* darle efecto de biñeta */
-  box-shadow: inset 0 0 0 500px rgba(0, 0, 0, 0.762);
+  box-shadow: inset 0 0 0 2500px rgba(0, 0, 0, 0.762);
   min-height: 100vh;
   z-index: -1;
   position: absolute;
