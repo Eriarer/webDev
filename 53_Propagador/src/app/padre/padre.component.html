@@ -1,26 +1,30 @@
-<body>
-    <div class="container ms-3">
-        <h1 class="text-cetner">{{title}}</h1>
+<div class="container-fluid ms-3">
+    <div class="container">
+        <h1 class="text-center">{{title}}</h1>
         <h4 class="text-center">Abraham Melgoza de la Torre</h4>
         @for (voto of votos; track voto){
-        <div>
-            <app-hijo [voto]="voto.title" [id]="voto.id" [boton]="voto.boton" (unVoto)="addVoto($event)"></app-hijo>
+        <div class="align-items-center w-100">
+            <app-hijo [voto]="voto.title" [id]="voto.id" [boton]="voto.boton" [deshabilitado]="finalizado"
+                      (unVoto)="addVoto($event)"></app-hijo>
         </div>
         }
-        <h3 class="text-center">{{votacion}}</h3>
-        <div class="text-center">
-            <p>Rojo: {{c1}}</p>
-            <p>Azul: {{c2}}</p>
-            <p>Verde: {{c3}}</p>
-            <p>Amarillo: {{c4}}</p>
-        </div>
+        <h3 class="text-center" [innerHTML]="votacion"></h3>
+
+        @if(!finalizado){
         <div class="text-center my-3">
-            <button (click)="finalizar()" class="btn btn-secondary">Finalizar</button>
+            <button (click)="finalizado=true" class="btn btn-secondary">Finalizar</button>
         </div>
-        @if(totalVotos > 0){
-        <div class="text-center">
-            <h4>Total de votos: {{totalVotos}}</h4>
+        }
+        @if(finalizado){
+        <div class="text-center d-flex flex-column align-items-center">
+            <div class="text-center d-flex flex-column w-25">
+                <p class="badge rounded-pill text-bg-danger">Rojo: {{c1}}</p>
+                <p class="badge rounded-pill text-bg-primary">Azul: {{c2}}</p>
+                <p class="badge rounded-pill text-bg-success">Verde: {{c3}}</p>
+                <p class="badge rounded-pill text-bg-warning">Amarillo: {{c4}}</p>
+            </div>
+            <span class="badge rounded-pill text-bg-info">Total de votos: {{totalVotos}}</span>
         </div>
         }
     </div>
-</body>
+</div>
