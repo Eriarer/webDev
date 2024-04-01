@@ -1,0 +1,10 @@
+<body>
+  <h1>Melgoza de la Torre Abraham</h1>
+  <app-propagador (propagar)="procesaProgapar($event)"></app-propagador>
+  <div>
+    @if(msg!=""){
+    <p>Mensaje de mi hijo: <span>{{msg}}</span></p>
+    }
+  </div>
+</body>
+<router-outlet />
