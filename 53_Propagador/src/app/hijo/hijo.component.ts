@@ -11,6 +11,7 @@ export class HijoComponent {
   @Input() voto: string = '';
   @Input() boton: string = '';
   @Input() id: number = 0;
+  @Input() deshabilitado: boolean = false;
   @Output() unVoto = new EventEmitter<number>();
 
   votar(): void {
