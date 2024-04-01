@@ -1,0 +1,26 @@
+<body>
+    <div class="container ms-3">
+        <h1 class="text-cetner">{{title}}</h1>
+        <h4 class="text-center">Abraham Melgoza de la Torre</h4>
+        @for (voto of votos; track voto){
+        <div>
+            <app-hijo [voto]="voto.title" [id]="voto.id" [boton]="voto.boton" (unVoto)="addVoto($event)"></app-hijo>
+        </div>
+        }
+        <h3 class="text-center">{{votacion}}</h3>
+        <div class="text-center">
+            <p>Rojo: {{c1}}</p>
+            <p>Azul: {{c2}}</p>
+            <p>Verde: {{c3}}</p>
+            <p>Amarillo: {{c4}}</p>
+        </div>
+        <div class="text-center my-3">
+            <button (click)="finalizar()" class="btn btn-secondary">Finalizar</button>
+        </div>
+        @if(totalVotos > 0){
+        <div class="text-center">
+            <h4>Total de votos: {{totalVotos}}</h4>
+        </div>
+        }
+    </div>
+</body>
