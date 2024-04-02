@@ -1,0 +1,12 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.color {
+    background-color: rgba(9, 9, 9, 0.811);
+    text-align: center;
+}
