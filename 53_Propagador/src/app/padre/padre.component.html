@@ -5,14 +5,14 @@
         @for (voto of votos; track voto){
         <div class="align-items-center w-100">
             <app-hijo [voto]="voto.title" [id]="voto.id" [boton]="voto.boton" [deshabilitado]="finalizado"
-                      (unVoto)="addVoto($event)"></app-hijo>
+                (unVoto)="addVoto($event)"></app-hijo>
         </div>
         }
         <h3 class="text-center" [innerHTML]="votacion"></h3>
 
         @if(!finalizado){
         <div class="text-center my-3">
-            <button (click)="finalizado=true" class="btn btn-secondary">Finalizar</button>
+            <button (click)="finalizar()" class="btn btn-secondary">Finalizar</button>
         </div>
         }
         @if(finalizado){
@@ -24,6 +24,7 @@
                 <p class="badge rounded-pill text-bg-warning">Amarillo: {{c4}}</p>
             </div>
             <span class="badge rounded-pill text-bg-info">Total de votos: {{totalVotos}}</span>
+            <div [innerHTML]="ganador"></div>
         </div>
         }
     </div>

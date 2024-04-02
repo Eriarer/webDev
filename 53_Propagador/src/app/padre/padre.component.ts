@@ -17,6 +17,7 @@ export class PadreComponent {
   c4: number = 0;
   totalVotos: number = 0;
   finalizado: boolean = false;
+  ganador: string = "";
 
   votos = [
     { title: "Rojo", boton: "btn-danger", id: 1 },
@@ -46,5 +47,35 @@ export class PadreComponent {
         break;
     }
     this.totalVotos++;
+  }
+
+  finalizar(): void {
+    this.votacion = "";
+    this.ganador = "El color favorito de la gente es: <span class='badge rounded-pill text-bg-";
+    if (this.c1 > this.c2 && this.c1 > this.c3 && this.c1 > this.c4) {
+      this.ganador += "danger'>Rojo</span>";
+    } else if (this.c2 > this.c1 && this.c2 > this.c3 && this.c2 > this.c4) {
+      this.ganador += "primary'>Azul</span>";
+    } else if (this.c3 > this.c1 && this.c3 > this.c2 && this.c3 > this.c4) {
+      this.ganador += "success'>Verde</span>";
+    } else if (this.c4 > this.c1 && this.c4 > this.c2 && this.c4 > this.c3) {
+      this.ganador += "warning'>Amarillo</span>";
+    } else {
+      this.ganador += "secondary'>Empate!</span> entre";
+      let max = Math.max(this.c1, this.c2, this.c3, this.c4);
+      if (this.c1 == max) {
+        this.ganador += "<br><span class='text-danger'>Rojo</span>";
+      }
+      if (this.c2 == max) {
+        this.ganador += "<br><span class='text-primary'>Azul</span>";
+      }
+      if (this.c3 == max) {
+        this.ganador += "<br><span class='text-success'>Verde</span>";
+      }
+      if (this.c4 == max) {
+        this.ganador += "<br><span class='text-warning'>Amarillo</span>";
+      }
+    }
+    this.finalizado = true;
   }
 }
