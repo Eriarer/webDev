@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <h3 class="ps-3 titulo">Hijo 1</h3>
+  </div>
+  <input #msg name="msg" type="text" class="form-control" placeholder="Mensaje a Hijo2">
+  <button type="button" class="mt-2 btn btn-primary" (click)="enviarMensaje(msg.value)">
+    Enviar mensaje
+  </button>
+</div>
