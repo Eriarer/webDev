@@ -1,0 +1,53 @@
+<div class="bg-opacity-75 bg-black text-bg-dark  overflow-y-scroll" style="height: 100svh;">
+  <div class="bg-dark text-center pb-2 mb-2">
+    <h1>Práctica Api</h1>
+    <h5>Abraha Melgoza de la Torre</h5>
+  </div>
+  <div class="text-center mb-2">
+    <button class="btn btn-primary" (click)="retriveData()">Recuperar Datos</button>
+  </div>
+
+  @if (array.length > 0 && toShow) {
+  <div class="container">
+    <table class="table table-dark table-striped table-hover">
+      <thead class="bg-dark text-light">
+        <tr class="text-center">
+          <th class="col" colspan="7" aria-colspan="7">
+            Datos INEGI
+          </th>
+        </tr>
+      </thead>
+      <thead class="bg-dark text-light bg-opacity-75">
+        <tr class="text-center">
+          <th class="col">#</th>
+          <th class="col">Estado</th>
+          <th class="col">Abreviatura</th>
+          <th class="col">Poblacion</th>
+          <th class="col">Poblacion Femenina</th>
+          <th class="col">Poblacion Masculina</th>
+          <th class="col">Vivienda</th>
+        </tr>
+      </thead>
+      <tbody class="bg-dark text-light bg-opacity-75">
+        @for(i of array; track i){
+        <tr class="text-center">
+          <td>{{i.cve_agee}}</td>
+          <td>{{i.nom_agee}}</td>
+          <td>{{i.nom_abrev}}</td>
+          <td>{{i.pob}}</td>
+          <td>{{i.pob_fem}}</td>
+          <td>{{i.pob_mas}}</td>
+          <td>{{i.viv}}</td>
+        </tr>
+        }
+    </table>
+  </div>
+  }@else if( toShow ){
+  <div class="container">
+    <div class="alert alert-danger text-center">
+      <h3>No hay datos</h3>
+    </div>
+  </div>
+  }
+</div>
+<router-outlet />
