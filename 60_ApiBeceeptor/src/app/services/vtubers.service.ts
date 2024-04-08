@@ -7,7 +7,7 @@ import { take } from 'rxjs';
 })
 export class VtubersService {
 
-  urlAPI: string = 'https://sesentaednpointemdt.free.beeceptor.com/vtubers';
+  urlAPI: string = 'https://vtubersemdt.free.beeceptor.com/vtubers';
 
   constructor(private http: HttpClient) { }
 
