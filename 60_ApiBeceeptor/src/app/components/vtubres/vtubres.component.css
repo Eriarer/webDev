@@ -1,0 +1,12 @@
+#contenedor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#son {
+    width: 100%;
+    max-width: 1200px;
+}
