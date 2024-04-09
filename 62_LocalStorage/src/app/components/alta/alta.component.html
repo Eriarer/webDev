@@ -1,0 +1,31 @@
+<div class="container">
+    <h2 class="text-center">Alta cliente</h2>
+    <form>
+        <div class="mb-3">
+            <label for="nombreCliente" class="form-label">Nombre</label>
+            <input type="text" [(ngModel)]="cliente.name" [ngModelOptions]="{standalone: true}" class="form-control"
+                id="nombreCliente" aria-describedby="nombreHelp">
+            <div id="emailHelp" class="form-text">Nombre completo del cliente</div>
+        </div>
+        <div class="mb-3">
+            <label for="cifCliente" class="form-label">ID</label>
+            <input type="text" [(ngModel)]="cliente.cif" [ngModelOptions]="{standalone: true}" class="form-control"
+                id="cifCliente">
+        </div>
+        <div class="mb-3">
+            <label for="direccionCliente" class="form-label">Dirección</label>
+            <input type="text" [(ngModel)]="cliente.direccion" [ngModelOptions]="{standalone: true}"
+                class="form-control" id="direccionCliente">
+        </div>
+        <div class="mb-3">
+            <label for="grupoCliente" class="form-label">Grupo</label>
+            <select [(ngModel)]="cliente.grupo" [ngModelOptions]="{standalone: true}" class="form-select"
+                id="grupoCliente" aria-label="GrupoSelect">
+                @for(grupo of grupos; track grupo){
+                <option value="{{grupo.id}}">{{grupo.name}}</option>
+                }
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="this.nuevoCliente()">Guardar</button>
+    </form>
+</div>
