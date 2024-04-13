@@ -26,6 +26,6 @@
     &>h5 {
         color: #fff;
         /* agregarle una sombra neon al texto */
-        text-shadow: 0 0 5px #ffc676a5;
+        text-shadow: 0 0 12px #ffc676ec;
     }
 }
