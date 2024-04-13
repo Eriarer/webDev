@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "63_SPA": {
+    "64_SPA": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -29,7 +29,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
             ]
           },
           "configurations": {
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "63_SPA:build:production"
+              "buildTarget": "64_SPA:build:production"
             },
             "development": {
-              "buildTarget": "63_SPA:build:development"
+              "buildTarget": "64_SPA:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "63_SPA:build"
+            "buildTarget": "64_SPA:build"
           }
         },
         "test": {

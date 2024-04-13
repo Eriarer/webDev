@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -13,22 +14,27 @@ export class NavbarComponent {
   vtubersActive: boolean = false;
   aboutActive: boolean = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    this.switchActive(0);
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const currentRoute = event.urlAfterRedirects.split('/')[1];
+        this.updateActive(currentRoute);
+      }
+    });
   }
 
-  switchActive(active: number) {
+  updateActive(route: string) {
     this.homeActive = this.vtubersActive = this.aboutActive = false;
-    switch (active) {
-      case 0:
+    switch (route) {
+      case 'home':
         this.homeActive = true;
         break;
-      case 1:
+      case 'vtubers':
         this.vtubersActive = true;
         break;
-      case 2:
+      case 'about':
         this.aboutActive = true;
         break;
     }

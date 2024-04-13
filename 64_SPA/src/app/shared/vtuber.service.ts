@@ -8,4 +8,8 @@ import { Vtubers } from '../interfaces/vtubers';
 export class VtuberService {
   private vtubers: Vtubers[] = VTUBERS;
   constructor() { }
+
+  public getVtubers(): Vtubers[] {
+    return this.vtubers;
+  }
 }

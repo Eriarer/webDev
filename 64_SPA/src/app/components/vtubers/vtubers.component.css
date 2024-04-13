@@ -1,0 +1,37 @@
+/* fluid 5 columns */
+.grid-sizer,
+.grid-item {
+    width: 20%;
+    float: left;
+    padding: 1%;
+    horizontalOrder: true;
+}
+
+/* Dark UI */
+.card {
+    background-color: #21211c;
+    color: #fff;
+    border: none;
+    /* agregarle una sombra neon */
+    box-shadow: 0 0 15px 2px #381f6b;
+    transition: all 0.7s ease;
+
+    &:hover {
+        /* agregarle una sombra más intensa */
+        box-shadow: 0 0 15px 5px #3e1c82;
+    }
+
+    border-radius: 25px;
+}
+
+.text-mute {
+    color: #a5a5a5;
+}
+
+.card-body {
+    &>h5 {
+        color: #fff;
+        /* agregarle una sombra neon al texto */
+        text-shadow: 0 0 5px #ffc676a5;
+    }
+}

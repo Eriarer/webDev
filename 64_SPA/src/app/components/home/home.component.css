@@ -1,3 +1,12 @@
+#card {
+    max-width: 30rem;
+    width: 100%;
+
+    >* {
+        font-size: 1.5rem;
+    }
+}
+
 /* Dark UI */
 .card {
     background-color: #21211c;
@@ -19,9 +28,4 @@
         /* agregarle una sombra neon al texto */
         text-shadow: 0 0 5px #ffc676a5;
     }
-}
-
-#card {
-    max-width: 18rem;
-    width: 100%;
 }
