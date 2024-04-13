@@ -1,0 +1,12 @@
+@if(indice === -1){
+<div class="row animate__animated animate__fadeInDown">
+  <div class="col">
+    <div class="fs-1 alert alert-info" role="alert">
+      No existen resultados de:
+      <div class="text-center text-primary">{{nombre}}</div>
+    </div>
+  </div>
+</div>
+}@else {
+<app-avtuber [vtuber]="myVtuber"></app-avtuber>
+}

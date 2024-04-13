@@ -1,0 +1,20 @@
+<div class="row row-cols-2 row-cols-md-3">
+  @for(vtuber of myvtures; track vtuber; let i = $index){
+  <div class="col mb-5">
+    <div class="card">
+      <div class="card title">
+        <img [src]="vtuber.img" class="card-img-top" [alt]="vtuber.nombre">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{vtuber.nombre}}</h5>
+          <p class="card-text text-center text-mute">Debut: {{vtuber.debut}}</p>
+        </div>
+        <div class="card-footer d-flex justify-content-center">
+          <button [routerLink]="['/avtuber', i]" routerLinkActive="router-link-active" class="btn btn-outline-primary">
+            Ver Más
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>

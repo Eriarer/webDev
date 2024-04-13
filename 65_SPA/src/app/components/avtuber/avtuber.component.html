@@ -1,0 +1,19 @@
+<h1 class="animate__animated animate__fadeInDown">{{vtuber.nombre}} <small class="text-mute fs-5">Debut:
+    {{vtuber.debut}}</small></h1>
+<hr>
+<div class="row">
+  <div class="col col-12 col-md-4 d-flex flex-column justify-content-center align-content-start">
+    <img [src]="vtuber.img" class="img-fluid mb-3" [alt]="vtuber.nombre">
+    <button routerLink="/vtubers" class="btn btn-outline-danger">Regresar</button>
+  </div>
+  <div class="col col-12 col-md-8">
+    <h3 class="text-center">{{vtuber.nombre}}</h3>
+    <hr>
+    <p class="fs-4">{{vtuber.perfil}}</p>
+    <p class="text-end fw-bolder fs-5">Grupo: {{vtuber.genName}}</p>
+    <div class="d-flex justify-content-center">
+      <img style="width: 100%; max-width: 180px;" [src]="'../../../assets/img/Holo'+vtuber.genName+'_Logo.webp'"
+        [alt]="vtuber.genName">
+    </div>
+  </div>
+</div>

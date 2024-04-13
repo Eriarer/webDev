@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+.btn.btn-outline-primary {
+    text-shadow: 0 0 10px #000746;
+    box-shadow: 0 0 10px 2px #02007481;
+    transition: all 0.5s ease;
+
+    &:hover {
+        box-shadow: 0 0 15px 2px #1aa6e767;
+    }
+}
+
+.btn.btn-outline-danger {
+    text-shadow: 0 0 10px #6b0000;
+    box-shadow: 0 0 10px 2px #6b0000;
+    transition: all 0.5s ease;
+
+    &:hover {
+        box-shadow: 0 0 15px 2px #ff0000;
+    }
+}
