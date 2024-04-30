@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="pill pill-primary">Pipes</h1>
+  <h4 class="pill pill-secondary">Pipes para videos seguros</h4>
+  <h6 class="pill pill-info">Abraham Melgoza de la Torre</h6>
+  <hr class="divider">
+  <div class="video">
+    <iframe [src]="video | pipeseguro:'https://www.youtube.com/embed/'" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="100%"
+      height="100%"></iframe>
+  </div>
+  <router-outlet />
+</div>
