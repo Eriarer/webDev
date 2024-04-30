@@ -1,0 +1,30 @@
+<h1>Uso de la directiva de atributo ngStyle</h1>
+<h3>Abraham Melgoza de la Torre</h3>
+<br>
+<h1 [ngStyle]="{'color':'red', 'background-color':'pink', 'text-align':'center'}">Sitio furea de servicio #1 </h1>
+<h1 style="color:red; background-color: pink; text-align:center">Sitio furea de servicio #2</h1>
+<h1 [ngStyle]="{'color': colorEstado}">Sitio furea de servicio #3</h1>
+<h1 [ngStyle]="{'color': retornarColor()}">Sitio furea de servicio #4</h1>
+<br>
+<table>
+  @for(elemento of [5,6,7,8,9]; track elemento){
+  <tr>
+    <td [ngStyle]="{'font=size': '60px','background-color':elemento % 2 == 0 ? 'red': 'pink'}">{{elemento}}</td>
+  </tr>
+  }
+</table>
+@for(elemento of [10,11,12,13,14]; track elemento){
+<p [ngStyle]="{'font-size.px': elemento*2}">Tamaño de fuente en pixeles: {{elemento}}</p>
+}
+<br>
+<div [ngStyle]="presentacion">Texto en forma horizontal y vertical</div>
+<button (click)="agrandar()">Agrandar</button>
+<button (click)="achicar()">Achicar</button>
+<br>
+<p [style.color]="'red'">Color rojo</p>
+<p [style.background-color]="bgColor">Color</p>
+<br>
+<div [style.font-size.px]="tamano">Texto</div>
+<button (click)="aumentar()">Aumentar</button>
+<button (click)="reducir()">Reducir</button>
+<router-outlet />
