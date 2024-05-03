@@ -1,0 +1,121 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    width: 90%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.small {
+    font-size: 0.8em;
+}
+
+.muted {
+    color: #6c757d;
+}
+
+.form-group {
+    margin: 0;
+    margin-bottom: 1rem;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.form-label {
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    width: 10%;
+    height: 50px;
+    background-color: #9fa0a1;
+    color: white;
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ced4da;
+}
+
+.form-input {
+    width: 89%;
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+    border-radius: 0 20px 20px 0;
+}
+
+.form-tooltip {
+    display: block;
+    margin-top: 0.25rem;
+    flex-basis: 99%;
+    height: 1rem;
+    padding-left: 140px;
+}
+
+.form-label.email-label {
+    width: 99%;
+    border-radius: 20px 20px 0 0;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.form-input.email-input {
+    width: 99%;
+    border-radius: 0 0 20px 20px;
+    min-height: 150px;
+}
+
+.form-tooltip.email-tooltip {
+    margin-top: 0;
+}
+
+.btn {
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.btn.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.btn.btn-block {
+    width: 99%;
+}
+
+.resultado {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.error {
+    background-color: #a40714;
+    color: white;
+    border: 1px solid #a40714;
+}
+
+.success {
+    background-color: #28a745;
+    color: white;
+    border: 1px solid #28a745;
+}

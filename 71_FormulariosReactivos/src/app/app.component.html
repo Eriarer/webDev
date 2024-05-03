@@ -1,0 +1,43 @@
+<div class="container">
+
+  <h3 class="text-center">Abraham Melgoza de la Torre </h3>
+
+  <form class="form" [formGroup]="formularioContacto" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label class="form-label" for="nombre">Nombre:</label>
+      <input class="form-input" type="text" formControlName="nombre" placeholder="Nombre" name="nombre" id="nombre">
+      @if(this.formularioContacto.get('nombre')?.errors?.['required']){
+      <span class="small muted form-tooltip">El nombre no puede quedar vacío</span>
+      }
+      @if(this.formularioContacto.get('nombre')?.errors?.['minlength']){
+      <span class="small muted form-tooltip">Debe contener mínimo 10 caracteres</span>
+      }
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="email">Email:</label>
+      <input class="form-input" type="email" formControlName="email" placeholder="Email" name="email" id="email">
+      @if(this.formularioContacto.get('email')?.errors?.['required']){
+      <span class="small muted form-tooltip">El email no puede quedar vacío</span>
+      }
+      @if(this.formularioContacto.get('email')?.errors?.['email']){
+      <span class="small muted form-tooltip">El email no es válido</span>
+      }
+    </div>
+    <div class="form-group">
+      <label class="form-label email-label" for="mensaje">Mensaje:</label>
+      <textarea class="form-input email-input" formControlName="mensaje" name="mensaje" id="mensaje" cols="30"
+        rows="10"></textarea>
+      @if(this.formularioContacto.get('mensaje')?.errors?.['required']){
+      <span class="small muted form-tooltip email-tooltip">El mensaje no puede quedar vacío</span>
+      }
+      @if(this.formularioContacto.get('mensaje')?.errors?.['maxlength']){
+      <span class="small muted form-tooltip email-tooltip">Maximo de caracteres alcanzado. 500 caracteres</span>
+      }
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">
+      Confirmar
+    </button>
+  </form>
+  <p class="resultado" [ngClass]="{error: error, success: !error}" [hidden]="resultado==''">{{resultado}}</p>
+</div>
+<router-outlet />
