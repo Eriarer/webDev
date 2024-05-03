@@ -1,0 +1,50 @@
+<h1>Abraham Melgoza de la Torre</h1>
+<!-- Muestra el nombre del cliente -->
+<p>Nombre del cliente: {{ nombre }}</p>
+
+<!-- Muestra el nombre del cliente en mayúsculas utilizando la pipe 'uppercase' -->
+<p>Nombre del cliente en mayúsculas: {{ nombre | uppercase }}</p>
+
+<!-- Muestra el nombre del cliente en minúsculas utilizando la pipe 'lowercase' -->
+<p>Nombre del cliente en minúsculas: {{ nombre | lowercase }}</p>
+
+<!-- Muestra el saldo con formato monetario utilizando la pipe 'currency' -->
+<p>El saldo es: {{ saldo | currency:'$' }}</p>
+
+<!-- Muestra los días laborables del array 'dias' utilizando la pipe 'slice' -->
+<p>Días laborables: {{ dias | slice:1:6 }}</p>
+
+<!-- Muestra el contenido del array 'articulos' en formato JSON -->
+<p>{{ articulos | json }}</p>
+
+<!-- Muestra la fecha actual con el formato 'd/M/y' utilizando la pipe 'date' -->
+<p>Fecha actual: {{ fechaActual | date:'d/M/y' }}</p>
+
+
+<!-- Angular - DatePipe -->
+<p>Today is {{fechaActual | date}}</p> <!-- Muestra la fecha actual utilizando el pipe 'date' -->
+<p>Or if you prefer, {{fechaActual | date:'fullDate'}}</p>
+<!-- Muestra la fecha actual en un formato más detallado utilizando la opción 'fullDate' -->
+<p>The time is {{fechaActual | date:'h:mm a z'}}</p> <!-- Muestra la hora actual utilizando el formato 'h:mm a z' -->
+
+<!-- Angular - PercentPipe -->
+<p>A: {{a | percent}}</p> <!-- Muestra el valor de 'a' como un porcentaje utilizando el pipe 'percent' -->
+
+<!-- Angular - DecimalPipe -->
+<p>{{3.6 | number: '1.0'}}</p>
+<!-- Muestra el número 3.6 con un decimal utilizando el pipe 'number' con el formato '1.0' -->
+<p>{{3.6123 | number: '1.0-2'}}</p>
+<!-- Muestra el número 3.6123 con un decimal y dos dígitos adicionales utilizando el formato '1.0-2' -->
+<p>{{3.6 | number: '1.0-0'}}</p>
+<!-- Muestra el número 3.6 con un decimal y sin dígitos adicionales utilizando el formato '1.0-0' -->
+
+<p>a) {{3.6 | number: '1.0'}}</p>
+<!-- Muestra el número 3.6 con un decimal utilizando el pipe 'number' con el formato '1.0' -->
+<p>b) {{3.6123 | number: '1.0-2'}}</p>
+<!-- Muestra el número 3.6123 con un decimal y dos dígitos adicionales utilizando el formato '1.0-2' -->
+<p>c) {{343.6234 | number: '4.0-3' }}</p>
+<!-- Muestra el número 343.6234 con cuatro decimales y tres dígitos adicionales utilizando el formato '4.0-3' -->
+<p>d) {{3.6 | number: '1.0-0'}}</p>
+<!-- Muestra el número 3.6 con un decimal y sin dígitos adicionales utilizando el formato '1.0-0' -->
+
+<router-outlet />
