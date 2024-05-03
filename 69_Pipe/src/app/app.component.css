@@ -1,0 +1,46 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0;
+    padding: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#wrapper-names {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.pill {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-right: 5px;
+    width: 100%;
+}
+
+.pill.pill-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pill.pill-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
