@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
-import { PersonModel } from '../models/person.model';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { uuid } from 'uuidv4';
+import {Injectable} from '@angular/core';
+import {PersonModel} from '../models/person.model';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {v4 as uuidv4} from 'uuid';
+
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,7 @@ export class PersonsService {
 
   fnAddPerson(person: PersonModel) {
     let aux: PersonModel[] = this.$persons.getValue();
-    person._uid;
+    person._uid = uuidv4();
     aux.push(person);
     this.$persons.next(aux);
     this.fnSaveLocalStorage();
