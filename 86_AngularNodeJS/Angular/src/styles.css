@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+/* 'deshabilitar los spin buttons o flechas de arriba o abajo de el input tipo number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    appearance: none;
+  margin: 0;
+}

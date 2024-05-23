@@ -1,0 +1,77 @@
+<div class="container mt-5">
+  <h1 class="text-center">Abraham Melgoza de la Torre</h1>
+  <div class="row row-cols-1 row-cols-md-2">
+    <div class="col">
+      <div class="card">
+        <div class="card-header h1">Cálculo de Sueldo</div>
+        <div class="card-body">
+          <div class="input-group input-group-lg mb-3">
+            <label class="input-group-text" for="nombre">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              class="form-control"
+              [(ngModel)]="nombre"
+            />
+          </div>
+          <div class="input-group input-group-lg mb-3">
+            <label class="input-group-text" for="horas">Horas Trabajadas</label>
+            <input
+              type="number"
+              id="horas"
+              class="form-control"
+              [(ngModel)]="horas"
+            />
+          </div>
+          <div class="input-group input-group-lg mb-3">
+            <label class="input-group-text" for="pago">Pago por Hora</label>
+            <input
+              type="number"
+              id="pago"
+              class="form-control"
+              [(ngModel)]="pago"
+            />
+          </div>
+          <div class="input-group input-group-lg mb-3">
+            <label class="input-group-text" for="categoria">Categoría</label>
+            <select id="categoria" class="form-control" [(ngModel)]="categoria">
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+            </select>
+          </div>
+          <button
+            class="btn btn-primary btn-lg"
+            type="button"
+            (click)="enviar()"
+            [disabled]="!nombre || !horas || !pago || !categoria"
+          >
+            Enviar
+          </button>
+        </div>
+      </div>
+    </div>
+    @if (respuesta){
+    <div class="col">
+      <div class="card">
+        <div class="card-header h1">Resultado</div>
+        <div class="card-body">
+          <p><strong>Nombre:</strong> {{ respuesta.nombre }}</p>
+          <p><strong>Categoría:</strong> {{ respuesta.categoria }}</p>
+          <p><strong>Bono:</strong> {{ respuesta.bono }}</p>
+          <p><strong>Sueldo Bruto:</strong> {{ respuesta.sueldoBruto }}</p>
+          <p>
+            <strong>Sueldo Neto Antes de Impuestos:</strong>
+            {{ respuesta.sueldoNetoAntesImpuestos }}
+          </p>
+          <p>
+            <strong>Sueldo Neto Después de Impuestos:</strong>
+            {{ respuesta.sueldoNetoDepuesImpuestos }}
+          </p>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
+<router-outlet />
