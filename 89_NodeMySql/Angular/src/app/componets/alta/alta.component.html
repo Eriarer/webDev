@@ -1,0 +1,85 @@
+<div class="container d-flex justify-content-center">
+  <div class="card bg-dark mb-3" data-bs-theme="dark" style="max-width: 18rem">
+    <div class="card-header text-center">Altas</div>
+    <div class="card-body">
+      <form>
+        <!-- ID -->
+        <div class="input-group mb-3">
+          <label for="usrid" class="input-group-text">#</label>
+          <input
+            type="text"
+            class="form-control"
+            id="usrid"
+            name="usrid"
+            placeholder="Usr Id"
+            aria-label="User Id"
+            [(ngModel)]="id"
+          />
+        </div>
+        <!-- name -->
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            aria-describedby="name"
+            [(ngModel)]="name"
+          />
+        </div>
+        <!-- lastname -->
+        <div class="mb-3">
+          <label for="lastname" class="form-label">Lastname</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastname"
+            name="lastname"
+            aria-describedby="lastname"
+            [(ngModel)]="lastname"
+          />
+        </div>
+        <!-- email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            aria-describedby="email"
+            [(ngModel)]="email"
+          />
+        </div>
+        <!-- tel -->
+        <div class="mb-3">
+          <label for="tel" class="form-label">Phone Number</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="tel"
+            name="tel"
+            aria-describedby="tel"
+            [(ngModel)]="tel"
+          />
+        </div>
+      </form>
+    </div>
+    <div class="card-footer d-flex justify-content-around">
+      <button
+        type="button"
+        class="btn"
+        [class.btn-primary]="allfields"
+        [class.btn-secondary]="!allfields"
+        [disabled]="!allfields"
+        (click)="insertar()"
+      >
+        Insert
+      </button>
+      <button type="button" class="btn btn-warning" (click)="limpiar()">
+        Clear
+      </button>
+    </div>
+  </div>
+</div>

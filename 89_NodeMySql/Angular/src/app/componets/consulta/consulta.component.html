@@ -1,0 +1,57 @@
+<div class="container d-flex justify-content-center">
+  @if(array.length > 0){
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(user of array; track array){
+      <tr>
+        <th scope="row">{{ user.idUser }}</th>
+        <td>{{ user.name }}</td>
+        <td>{{ user.lastname }}</td>
+        <td>{{ user.contact }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  }@else { @if(error){
+  <div
+    class="card border-warning bg-dark mb-3"
+    data-bs-theme="dark"
+    style="max-width: 25rem"
+  >
+    <div class="card-header">Oops...</div>
+    <div class="card-body">
+      <h5 class="card-title">Error</h5>
+      <p class="card-text">Sorry there was an error.</p>
+      <p class="card-text">Code: {{ error }}</p>
+    </div>
+  </div>
+  }@else {
+  <div
+    class="card border-info bg-dark mb-3"
+    data-bs-theme="dark"
+    style="max-width: 25rem"
+  >
+    <div class="card-header">Oops...</div>
+    <div class="card-body">
+      <h5 class="card-title">No data</h5>
+      <p class="card-text">Sorry theres no datta.</p>
+      <div class="text-center">
+        <a
+          class="btn btn-info"
+          [routerLink]="['/alta']"
+          routerLinkActive="router-link-active"
+          >Insert</a
+        >
+      </div>
+    </div>
+  </div>
+  } }
+</div>
